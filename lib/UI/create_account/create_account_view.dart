@@ -7,7 +7,6 @@ import 'package:ui_design/ui_design.dart';
 import 'package:visit_sn/UI/create_account/create_account_view.form.dart';
 import 'package:visit_sn/view_models/create_account_view_model.dart';
 
-
 @FormView(fields: [
   FormTextField(name: 'email'),
   FormTextField(name: 'password'),
@@ -15,27 +14,31 @@ import 'package:visit_sn/view_models/create_account_view_model.dart';
 class CreateAccountView extends StatelessWidget with $CreateAccountView {
   CreateAccountView({Key? key}) : super(key: key);
 
- @override
- Widget build(BuildContext context) {
-   return ViewModelBuilder<CreateAccountViewModel>.reactive(
-     onModelReady: (model) => listenToFormUpdated(model),
-     builder: (context, model, child) => Scaffold(
-       backgroundColor: Colors.white,
-       body: SingleChildScrollView(
-         child: Column(
-           children: [
-             verticalSpaceLarge,
+  @override
+  Widget build(BuildContext context) {
+    return ViewModelBuilder<CreateAccountViewModel>.reactive(
+      onModelReady: (model) => listenToFormUpdated(model),
+      builder: (context, model, child) => Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                verticalSpaceLarge,
                 Text(
                   'Create Account',
                   style: TextStyle(fontSize: 34),
                 ),
                 verticalSpaceRegular,
                 InputField(
+                    placeholder: 'email',
                     controller: emailController,
                     primaryColor: Colors.black,
                     leading: Icon(Icons.email, color: Colors.black)),
                 verticalSpaceMedium,
                 InputField(
+                    placeholder: 'password',
                     controller: passwordController,
                     primaryColor: Colors.black,
                     password: true,
@@ -70,27 +73,29 @@ class CreateAccountView extends StatelessWidget with $CreateAccountView {
                             )),
                 ),
                 verticalSpaceMedium,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('have an account?'),
-                  horizontalSpaceTiny,
-                  GestureDetector(
-                    onTap: model.navigateLogin,
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Color(0xFF2D3B7D),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('have an account?'),
+                    horizontalSpaceTiny,
+                    GestureDetector(
+                      onTap: model.navigateLogin,
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Color(0xFF2D3B7D),
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-           ],
-         ),
-       ),
-     ),
-     viewModelBuilder: () => CreateAccountViewModel(),
-   );
- }
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      viewModelBuilder: () => CreateAccountViewModel(),
+    );
+  }
 }

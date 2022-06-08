@@ -27,6 +27,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bottom_navy_bar: ^6.0.0
+  cached_network_image: ^3.2.0
   cloud_firestore: ^3.1.10
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.3.9
@@ -35,11 +37,13 @@ dependencies:
     sdk: flutter
   freezed_annotation: ^2.0.3
   json_annotation: ^4.5.0
+  paginate_firestore: ^1.0.3+1
   stacked: ^2.2.7+1
   stacked_firebase_auth: ^0.2.10+2
   stacked_services: null
   ui_design:
     path: ../ui_design/
+  unicons: ^2.1.0
 
 dev_dependencies:
   build_runner: null
@@ -58,7 +62,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -66,18 +69,21 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+      - desert.png
+      - iles.png
+      - marche.png
+      - monuments.png
+      - musee.png
+      - parcs.png
+      - plages.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

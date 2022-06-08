@@ -5,6 +5,7 @@ import 'package:visit_sn/models/user.dart';
 class FirestoreService {
   final CollectionReference userCollection =
       FirebaseFirestore.instance.collection("users");
+  final CollectionReference regionCollection = FirebaseFirestore.instance.collection("region");
 
 
   Future<void> createUser({required User user}) async {
@@ -37,4 +38,6 @@ class FirestoreService {
               'The UserId doesn\'t exist');
     }
   }
+
+  
 }

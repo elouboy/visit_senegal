@@ -34,6 +34,7 @@ class LoginView extends StatelessWidget with $LoginView {
                 ),
                 verticalSpaceRegular,
                 InputField(
+                  placeholder: 'email',
                   controller: emailController,
                   primaryColor: Colors.white,
                   leading: const Icon(
@@ -43,11 +44,21 @@ class LoginView extends StatelessWidget with $LoginView {
                 ),
                 verticalSpaceMedium,
                 InputField(
+                  placeholder: 'password',
                   controller: passwordController,
                   primaryColor: Colors.black,
                   password: true,
                   leading: const Icon(Icons.lock, color: Colors.black),
                 ),
+                verticalSpaceTiny,
+                 Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                  onTap: model.navigateToForgotPwd,
+                  child: Text('Forgot Password?', style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w900, decoration: TextDecoration.underline),)
+                  ),
+            ),
+          verticalSpaceRegular,
                 verticalSpaceSmall,
                 verticalSpaceLarge,
                 if (model.validationMessage != null)
@@ -89,6 +100,7 @@ class LoginView extends StatelessWidget with $LoginView {
                         'Create an account',
                         style: TextStyle(
                           color: Color(0xFF2D3B7D),
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),

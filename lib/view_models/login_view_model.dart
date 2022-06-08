@@ -22,6 +22,7 @@ class LoginViewModel extends AuthenticationViewModel {
   void navigateToCreateAccount() =>
       navigationService.navigateTo(Routes.createAccountView);
 
+  void navigateToForgotPwd() => navigationService.navigateTo(Routes.forgotPwdView);
 
   @override
   Future authentication() {
