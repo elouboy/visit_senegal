@@ -21,74 +21,76 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.white,
         bottomNavigationBar: BottomNav(),
         body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                verticalSpaceMedium,
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0, right: 120.0),
-                  child: Text(
-                    'Welcome to Senegal',
-                    style:
-                        TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+          child: ListView(
+            children: [
+              Column(
+                children: [
+                  verticalSpaceMedium,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 120.0),
+                    child: Text(
+                      'Welcome to Senegal',
+                      style: TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-                verticalSpaceMedium,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20.0, right: 9.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Regions',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w500),
-                          ),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Text(
-                              'See All',
+                  verticalSpaceMedium,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0, right: 9.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Regions',
                               style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.w500),
+                                  fontSize: 20, fontWeight: FontWeight.w500),
                             ),
-                          )
-                        ],
+                            GestureDetector(
+                              onTap: () {},
+                              child: Text(
+                                'See All',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    verticalSpaceSmall,
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: SizedBox(
-                        height: 200,
-                        child: getRegion(),
+                      verticalSpaceSmall,
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: SizedBox(
+                          height: 200,
+                          child: getRegion(),
+                        ),
                       ),
-                    ),
-                    verticalSpaceMedium,
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20.0, right: 9.0),
-                      child: Text(
-                        'Categories',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w500),
+                      verticalSpaceMedium,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0, right: 9.0),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        ),
                       ),
-                    ),
-                    verticalSpaceSmall,
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: SizedBox(
-                        height: 200,
-                        child: getCategorie(),
+                      verticalSpaceSmall,
+                      Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: SizedBox(
+                          height: 200,
+                          child: getCategorie(),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
